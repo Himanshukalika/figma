@@ -726,13 +726,16 @@ nav {
 }
 
 .pricing-header {
-    padding: 30px 20px 20px;
+    padding: 30px 20px 10px;
+    text-align: center;
 }
 
 .pricing-header h3 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #252B42;
+    text-transform: uppercase;
 }
 
 .pricing-card.featured .pricing-header h3 {
@@ -745,35 +748,44 @@ nav {
     line-height: 1.4;
     max-width: 200px;
     margin: 0 auto;
+    font-weight: 400;
 }
 
 .pricing-card.featured .card-subtitle {
     color: white;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .pricing-price {
-    padding: 20px 0;
+    padding: 5px 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .price {
-    font-size: 60px;
+    font-size: 74px;
     font-weight: 700;
     line-height: 1;
     position: relative;
+    display: inline-block;
+    color: #252B42;
+    margin-top: 10px;
 }
 
 .price::before {
     content: "$";
-    font-size: 20px;
+    font-size: 28px;
     position: absolute;
     top: 5px;
-    left: -15px;
+    left: -20px;
+    color: #252B42;
 }
 
+.pricing-card.featured .price,
 .pricing-card.featured .price::before {
     color: white;
 }
@@ -782,6 +794,7 @@ nav {
     font-size: 14px;
     margin-top: 10px;
     color: #737373;
+    display: block;
 }
 
 .pricing-card.featured .period {
