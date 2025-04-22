@@ -580,6 +580,27 @@ nav {
     color: #252B42;
 }
 
+.testimonial-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonial-slide {
+    display: none;
+    animation: fade 0.5s ease-in-out;
+}
+
+.testimonial-slide.active {
+    display: block;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
 .testimonial-logo {
     margin-bottom: 40px;
 }
@@ -640,6 +661,7 @@ nav {
     background-color: #D9D9D9;
     border-radius: 50%;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .dot.active {
@@ -1111,4 +1133,78 @@ nav {
     .footer-column {
         width: 100%;
     }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #252B42;
+}
+
+.modal-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #252B42;
+}
+
+.modal-content p {
+    font-size: 16px;
+    color: #5C5C5C;
+    margin-bottom: 20px;
+}
+
+.modal-button {
+    background-color: #2091F9;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-button:hover {
+    background-color: #1a7ad4;
+}
+
+body.modal-open {
+    overflow: hidden;
 } 
