@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <div class="hero">
+    <div class="hero" id="hero">
         <nav>
             <div class="left-nav">
-                <a href="#" class="home">Home</a>
-                <a href="#" class="product">Product</a>
-                <a href="#" class="pricing">Pricing</a>
-                <a href="#" class="about">About</a>
-                <a href="#" class="contact">Contact</a>
+                <a href="#hero" class="home">Home</a>
+                <a href="#features-section" class="product">Product</a>
+                <a href="#pricing-section" class="pricing">Pricing</a>
+                <a href="#about-section" class="about">About</a>
+                <a href="#contact-section" class="contact">Contact</a>
             </div>
             <div class="logo">
                 <span>FIGMA</span>
@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    <div class="features-section">
+    <div class="features-section" id="features-section">
         <h2>Features</h2>
         <p>Most calendars are designed for teams.<br>Slate is designed for freelancers</p>
 
@@ -67,7 +67,7 @@
         </div>
     </div>
 
-    <div class="video-section">
+    <div class="video-section" id="about-section">
         <div class="video-container">
             <video id="demo-video" poster="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
                 <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
@@ -207,7 +207,7 @@
         </div>
     </div>
 
-    <div class="pricing-section">
+    <div class="pricing-section" id="pricing-section">
         <h2>Pricing</h2>
         <p>Most calendars are designed for teams.<br>Slate is designed for freelancers</p>
         
@@ -271,7 +271,7 @@
         </div>
     </div>
 
-    <div class="contact-section">
+    <div class="contact-section" id="contact-section">
         <h2>Contact Us</h2>
         <p>Most calendars are designed for teams.<br>Slate is designed for freelancers</p>
         
@@ -503,6 +503,28 @@
         // Initialize functions when page loads
         window.addEventListener('load', function() {
             initTestimonialCarousel();
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('.left-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    // Calculate the position to scroll to (with a small offset to account for fixed elements)
+                    const yOffset = -80; // Adjust this value based on your header/navbar height
+                    const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    
+                    // Scroll smoothly to the target section
+                    window.scrollTo({
+                        top: y,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
 </body>
