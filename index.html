@@ -11,12 +11,15 @@
 <body>
     <div class="hero">
         <nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
             <div class="left-nav">
-                <a href="#" class="home">Home</a>
-                <a href="#" class="product">Product</a>
-                <a href="#" class="pricing">Pricing</a>
-                <a href="#" class="about">About</a>
-                <a href="#" class="contact">Contact</a>
+                <a href="#home" class="home">Home</a>
+                <a href="#features" class="product">Product</a>
+                <a href="#pricing" class="pricing">Pricing</a>
+                <a href="#partners" class="about">About</a>
+                <a href="#contact" class="contact">Contact</a>
             </div>
             <div class="logo">
                 <span>FIGMA</span>
@@ -29,14 +32,14 @@
             </div>
         </nav>
 
-        <div class="hero-content">
+        <div id="home" class="hero-content">
             <h1>The best products<br>start with Figma</h1>
             <p>Most calendars are designed for teams.<br>Slate is designed for freelancers</p>
             <button class="try-button">Try For Free</button>
         </div>
     </div>
 
-    <div class="features-section">
+    <div id="features" class="features-section">
         <h2>Features</h2>
         <p>Most calendars are designed for teams.<br>Slate is designed for freelancers</p>
 
@@ -66,5 +69,340 @@
             </div>
         </div>
     </div>
+
+    <div class="video-section">
+        <div class="video-container">
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Woman using a laptop">
+            <div class="play-button">
+                <i class="fas fa-play"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="organize-section">
+        <div class="organize-content">
+            <h2>Fastest way to<br>organize</h2>
+            <p>Most calendars are designed for teams.<br>Slate is designed for freelancers</p>
+            <button class="try-button-organize">Try For Free</button>
+        </div>
+        <div class="organize-image">
+            <img src="https://media.istockphoto.com/id/164637079/photo/laptop.jpg?s=612x612&w=0&k=20&c=KU54BqCl0rfM62VBRvYvmPojY4MWokIxTa0QNrxHQzk=" alt="Laptop with blank white screen">
+        </div>
+    </div>
+
+    <div class="newsletter-section">
+        <div class="newsletter-image">
+            <img src="https://cdn.prod.website-files.com/645379b2f2b2154072180a98/66969397b8d2f5dba1d91eca_experiencia-email-marketing-ong.png" alt="Newsletter illustration">
+        </div>
+        <div class="newsletter-content">
+            <h6>At your fingertips</h6>
+            <h2>Lightning fast<br>prototyping</h2>
+            <h5>Subscribe to our Newsletter</h5>
+            <p>Available exclusively on Figmaland</p>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Your Email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="partners" class="partners-section">
+        <h2>Partners</h2>
+        <p>Most calendars are designed for teams.<br>Slate is designed for freelancers</p>
+        <div class="logo-grid">
+            <div class="logo-item">
+                <span>Client Name</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo">
+            </div>
+            <div class="logo-item">
+                <span>Client Name</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
+            </div>
+            <div class="logo-item">
+                <span>Client Name</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft Logo">
+            </div>
+            <div class="logo-item">
+                <span>Client Name</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Uber_logo_2018.svg" alt="Uber Logo">
+            </div>
+            <div class="logo-item">
+                <span>Client Name</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Dropbox_Icon.svg" alt="Dropbox Logo">
+            </div>
+            <div class="logo-item">
+                <span>Client Name</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo">
+            </div>
+            <div class="logo-item">
+                <span>Client Name</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Uber_logo_2018.svg" alt="Uber Logo">
+            </div>
+            <div class="logo-item">
+                <span>Client Name</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
+            </div>
+        </div>
+        <button class="try-button-partners">Try For Free</button>
+    </div>
+
+    <div class="testimonials-section">
+        <h2>Testimonials</h2>
+        <div class="testimonial-content">
+            <img class="company-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo">
+            <p>Most calendars are designed for teams. Slate is designed for freelancers<br>who want a simple way to plan their schedule.</p>
+            <div class="testimonial-profile">
+                <img src="https://i.pravatar.cc/60?img=8" alt="John Doe Profile" class="profile-image">
+                <div class="profile-info">
+                    <h4>John Doe</h4>
+                    <span>UI designer</span>
+                </div>
+            </div>
+            <div class="pagination-dots">
+                <span class="dot"></span>
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="pricing" class="pricing-section">
+        <h2>Pricing</h2>
+        <p>Most calendars are designed for teams.<br>Slate is designed for freelancers</p>
+        
+        <div class="pricing-cards">
+            <div class="pricing-card free">
+                <h3>FREE</h3>
+                <p class="subtitle">Organize across all apps by hand</p>
+                
+                <div class="price">
+                    <span class="number">0</span>
+                    <div class="price-details">
+                        <span class="dollar">$</span>
+                        <span class="period">Per Month</span>
+                    </div>
+                </div>
+                
+                <ul class="features">
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                </ul>
+                
+                <button class="order-button">Order Now</button>
+            </div>
+            
+            <div class="pricing-card standard">
+                <h3>STANDARD</h3>
+                <p class="subtitle">Organize across all apps by hand</p>
+                
+                <div class="price">
+                    <span class="number">10</span>
+                    <div class="price-details">
+                        <span class="dollar">$</span>
+                        <span class="period">Per Month</span>
+                    </div>
+                </div>
+                
+                <ul class="features">
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                </ul>
+                
+                <button class="order-button">Order Now</button>
+            </div>
+            
+            <div class="pricing-card business">
+                <h3>BUSINESS</h3>
+                <p class="subtitle">Organize across all apps by hand</p>
+                
+                <div class="price">
+                    <span class="number">99</span>
+                    <div class="price-details">
+                        <span class="dollar">$</span>
+                        <span class="period">Per Month</span>
+                    </div>
+                </div>
+                
+                <ul class="features">
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                    <li>Pricing Feature</li>
+                </ul>
+                
+                <button class="order-button">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Most calendars are designed for teams.<br>Slate is designed for freelancers</p>
+        
+        <div class="contact-container">
+            <div class="contact-form-container">
+                <h4>Contact Us</h4>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <textarea placeholder="Your Message"></textarea>
+                    <button type="submit" class="send-button">Send</button>
+                </form>
+            </div>
+            
+            <div class="contact-info-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>6386 Spring St undefined Anchorage, Georgia 12473 United States</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>(843) 555-0130</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>willie.jennings@example.com</p>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30767295.116023116!2d60.9460276840177!3d19.72227226514473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1745513337715!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Timothy</h4>
+                <ul>
+                    <li>Eleanor Edwards</li>
+                    <li>Ted Robertson</li>
+                    <li>Annette Russell</li>
+                    <li>Jennie Mckinney</li>
+                    <li>Gloria Richards</li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>John Black</h4>
+                <ul>
+                    <li>Philip Jones</li>
+                    <li>Product</li>
+                    <li>Colleen Russell</li>
+                    <li>Marvin Hawkins</li>
+                    <li>Bruce Simmmons</li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <ul class="contact-details">
+                    <li><i class="fas fa-map-marker-alt"></i> 7480 Mockingbird Hill</li>
+                    <li><i class="fas fa-phone-alt"></i> (239) 555-0108</li>
+                </ul>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const leftNav = document.querySelector('.left-nav');
+            const nav = document.querySelector('nav');
+            
+            menuToggle.addEventListener('click', function() {
+                leftNav.classList.toggle('active');
+            });
+            
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('.left-nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    leftNav.classList.remove('active');
+                    
+                    // Get the target section
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        // Calculate scroll position with offset for fixed header
+                        const headerOffset = 80;
+                        const elementPosition = targetSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        // Scroll to target section
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add active class to nav links based on scroll position
+            // And make nav fixed on scroll
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                
+                // Add fixed nav class when scrolled down
+                if (scrollPosition > 100) {
+                    nav.classList.add('fixed');
+                } else {
+                    nav.classList.remove('fixed');
+                }
+                
+                // Check each section and update nav link active state
+                document.querySelectorAll('div[id]').forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        document.querySelector('.left-nav a[href="#' + sectionId + '"]').classList.add('active');
+                    } else {
+                        document.querySelector('.left-nav a[href="#' + sectionId + '"]').classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
