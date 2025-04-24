@@ -148,20 +148,54 @@
 
     <div class="testimonials-section">
         <h2>Testimonials</h2>
-        <div class="testimonial-content">
-            <img class="company-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo">
-            <p>Most calendars are designed for teams. Slate is designed for freelancers<br>who want a simple way to plan their schedule.</p>
-            <div class="testimonial-profile">
-                <img src="https://i.pravatar.cc/60?img=8" alt="John Doe Profile" class="profile-image">
-                <div class="profile-info">
-                    <h4>John Doe</h4>
-                    <span>UI designer</span>
+        <div class="testimonial-slider">
+            <div class="testimonial-slides">
+                <!-- Slide 1 -->
+                <div class="testimonial-slide">
+                    <img class="company-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo">
+                    <p>Most calendars are designed for teams. Slate is designed for freelancers<br>who want a simple way to plan their schedule.</p>
+                    <div class="testimonial-profile">
+                        <img src="https://i.pravatar.cc/60?img=8" alt="John Doe Profile" class="profile-image">
+                        <div class="profile-info">
+                            <h4>John Doe</h4>
+                            <span>UI designer</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="testimonial-slide">
+                    <img class="company-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo">
+                    <p>Slate helped us create an amazing product that our customers love. The interface is intuitive and simplifies our workflow.</p>
+                    <div class="testimonial-profile">
+                        <img src="https://i.pravatar.cc/60?img=5" alt="Sarah Johnson Profile" class="profile-image">
+                        <div class="profile-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>Product Manager</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="testimonial-slide">
+                    <img class="company-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
+                    <p>We've been using Slate for the past year and it has transformed how our team collaborates and delivers projects on time.</p>
+                    <div class="testimonial-profile">
+                        <img src="https://i.pravatar.cc/60?img=3" alt="Michael Chen Profile" class="profile-image">
+                        <div class="profile-info">
+                            <h4>Michael Chen</h4>
+                            <span>Lead Developer</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="pagination-dots">
-                <span class="dot"></span>
-                <span class="dot active"></span>
-                <span class="dot"></span>
+            
+            <div class="slider-controls">
+                <div class="pagination-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
             </div>
         </div>
     </div>
@@ -402,6 +436,102 @@
                     }
                 });
             });
+            
+            // Testimonial slider
+            const testimonialsSlider = document.querySelector('.testimonial-slides');
+            const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.pagination-dots .dot');
+            let currentSlide = 0;
+            const slidesCount = testimonialSlides.length;
+            
+            // Function to update the slider position
+            function updateSlider() {
+                testimonialsSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Update active dot
+                dots.forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+                
+                // Update active slide for animation
+                testimonialSlides.forEach((slide, index) => {
+                    slide.classList.remove('active');
+                    if (index === currentSlide) {
+                        // Delay to sync with the slide transition
+                        setTimeout(() => {
+                            slide.classList.add('active');
+                        }, 50);
+                    }
+                });
+            }
+            
+            // Event listeners for dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    currentSlide = index;
+                    updateSlider();
+                    resetAutoSlide(); // Reset the timer when manually changing slides
+                });
+            });
+            
+            // Function to reset auto slide timer
+            function resetAutoSlide() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(autoSlide, 4000);
+            }
+            
+            // Function for automatic sliding
+            function autoSlide() {
+                currentSlide = (currentSlide + 1) % slidesCount;
+                updateSlider();
+            }
+            
+            // Auto slide every 4 seconds
+            let slideInterval = setInterval(autoSlide, 4000);
+            
+            // Touch swipe functionality for mobile
+            let startX, endX;
+            const sliderThreshold = 50; // Minimum distance to be considered a swipe
+            
+            sliderContainer.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+                clearInterval(slideInterval);
+            });
+            
+            sliderContainer.addEventListener('touchmove', function(e) {
+                if (!startX) return;
+                endX = e.touches[0].clientX;
+            });
+            
+            sliderContainer.addEventListener('touchend', function() {
+                if (!startX || !endX) return;
+                
+                const diffX = startX - endX;
+                
+                if (Math.abs(diffX) > sliderThreshold) {
+                    if (diffX > 0) {
+                        // Swipe left, go to next slide
+                        currentSlide = (currentSlide + 1) % slidesCount;
+                    } else {
+                        // Swipe right, go to previous slide
+                        currentSlide = (currentSlide - 1 + slidesCount) % slidesCount;
+                    }
+                    updateSlider();
+                }
+                
+                // Reset touch values
+                startX = null;
+                endX = null;
+                
+                resetAutoSlide();
+            });
+            
+            // Initialize slider
+            updateSlider();
         });
     </script>
 </body>
